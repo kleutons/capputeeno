@@ -1,11 +1,12 @@
 import { Header } from '@/components/Header/header'
 import './globals.css'
 import { Saira } from 'next/font/google'
+import { FilterCotextProvider } from '@/contexts/filterContext'
 
 const saira = Saira({ 
   weight: ['300', '400', '500', '600'],
-  subsets: ['latin'] 
-})
+  subsets: ['latin']
+ })
 
 export const metadata = {
   title: 'Create Next App',
@@ -18,11 +19,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body className={saira.className}>
-        <Header />
-        {children}
+        <FilterCotextProvider>
+          <Header/>  
+          {children}
+        </FilterCotextProvider>
       </body>
     </html>
   )
 }
+
