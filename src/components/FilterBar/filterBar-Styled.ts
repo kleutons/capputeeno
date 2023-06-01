@@ -70,6 +70,7 @@ export const PriorityFilter = styled.ul`
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     padding: 12px 16px;
+    z-index: 99;
     
     list-style: none;
     top: 110%;

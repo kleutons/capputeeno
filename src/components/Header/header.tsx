@@ -1,4 +1,3 @@
-
 import { LogoIcon } from '@/icons/logoIcon';
 import { HeaderSearchInput } from '../Inputs/header-search';
 import { CartControl } from './cart-control';
@@ -18,6 +17,7 @@ interface HeaderProps{
 
 
 export function Header(props:HeaderProps){
+   
     return(
         <S.TagHeader>
             <div className='container'>
@@ -26,7 +26,8 @@ export function Header(props:HeaderProps){
                 <S.Logo className={sairaStencil.className}> store </S.Logo>
                 </div>
                 <div className='container-input'>
-                    <HeaderSearchInput placeholder='Procurando por algo específico?' />
+                    <HeaderSearchInput
+                    placeholder='Procurando por algo específico?' />
                     <CartControl />
                 </div>
             </div>

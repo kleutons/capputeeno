@@ -1,14 +1,20 @@
+'use client'
 import { InputHTMLAttributes } from "react";
 import { SearchIcon } from "../../icons/search-icon";
 import * as S from "./header-search-styled";
+import { useFilter } from "@/hooks/userFilter";
 
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+    value: string;
+}
 
 export function HeaderSearchInput(props: InputProps){
+    const { setSearch } = useFilter();
+
     return(
         <S.SearchContainer>
-            <S.SearchInput {...props}/>
+            <S.SearchInput onChange={(e) => setSearch(e.target.value)}  {...props}/>
             <SearchIcon/>
         </S.SearchContainer>
     )

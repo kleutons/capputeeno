@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #F5F8FA;
+  background-color: var(--bg-primary);
 }
 
 a {
@@ -30,7 +30,8 @@ a {
 /* Estilos para largura de tela maior que 1200px */
 @media (min-width: 1201px) {
   .container {
-    max-width: 1200px;
+    padding: 0 20px; 
+    max-width: 1166px;
     margin: 0 auto; /* Centralizar o conteúdo */
   }
 }
