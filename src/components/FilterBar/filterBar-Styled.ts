@@ -5,18 +5,27 @@ import styled from "styled-components";
 
 export const FilterContainer = styled.div`
     display: flex;
+    flex-direction: column;
     width: 100%;
     align-items: start;
     justify-content: space-between;
     padding-top: 34px;
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint} ){
+        flex-direction: row;
+    }
 `;
 
 export const FilterList = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 20px;
     list-style:none;
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint} ){
+        gap: 40px;
+    }
 `;
 
 interface FilterItemProps{
@@ -26,7 +35,7 @@ interface FilterItemProps{
 export const FilterItem = styled.li<FilterItemProps>`
     font-family: inherit;
     font-weight: ${props => props.active ? '600' : '400'};
-    font-size: 16px;
+    font-size: 15px;
     line-height: 22px;
     text-align: center;
     text-transform: uppercase;
@@ -34,12 +43,18 @@ export const FilterItem = styled.li<FilterItemProps>`
     cursor: pointer;
 
     border-bottom: ${props => props.active ? '4px solid var(--orange-low)' : ''};
+
+    @media (min-width: ${props => props.theme.desktopBreakpoint} ){
+        font-size: 16px;
+    }
 `;
 
 export const PriorityFilterContainer = styled.div`
     display: flex;
     align-items: center;
     position: relative;
+    align-self: flex-end;
+    margin-top: 10px;
 
     button{
         border: none;
@@ -60,6 +75,11 @@ export const PriorityFilterContainer = styled.div`
             margin-left: 16px;
         }
     }
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint} ){
+        margin-top: 0;
+    }
+
 `;
 
 export const PriorityFilter = styled.ul`

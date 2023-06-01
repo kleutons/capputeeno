@@ -6,7 +6,8 @@ import styled from "styled-components";
 export const SearchContainer = styled.div`
     display: flex;
     align-items: center;
-    width: 325px;
+    min-width: 140px;
+    max-width: 325px;
     border-radius: 8px;
     background-color: var( --bg-secondary);
     justify-content: space-between;
@@ -32,5 +33,9 @@ export const SearchInput = styled.input`
 
     &:focus-visible{
         outline: none;
+    }
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint} ){
+        min-width:290px;
     }
 `;

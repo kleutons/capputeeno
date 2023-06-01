@@ -1,6 +1,6 @@
 import { LogoIcon } from '@/icons/logoIcon';
-import { HeaderSearchInput } from '../Inputs/header-search';
-import { CartControl } from './cart-control';
+import { HeaderSearchInput } from '../Inputs/headerSearch';
+import { CartControl } from './cartControl';
 import * as S from './headerStyled';
 
 import { Saira_Stencil_One } from 'next/font/google'
@@ -21,10 +21,10 @@ export function Header(props:HeaderProps){
     return(
         <S.TagHeader>
             <div className='container'>
-                <div>
+                <S.LogoContainer>
                 <LogoIcon />
                 <S.Logo className={sairaStencil.className}> store </S.Logo>
-                </div>
+                </S.LogoContainer>
                 <div className='container-input'>
                     <HeaderSearchInput
                     placeholder='Procurando por algo específico?' />

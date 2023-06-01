@@ -17,13 +17,42 @@ export const TagHeader = styled.header`
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 20px
+        gap: 10px
+    }
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint} ){
+        .container-input{
+            gap: 20px
+        }
     }
 `;
+
+export const LogoContainer = styled.div`
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    >svg{
+        height: 22px;
+        width: 22px;
+    }
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint} ){
+        >svg{
+            height: 24px;
+            width: 24px;
+        }
+    }
+`
 
 export const Logo = styled.a`
     color: var(--logo-color);
     font-weight: 400;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 150%;
+
+    @media (min-width: ${props => props.theme.tabletBreakpoint} ){
+        font-size: 40px;
+    }
 `;

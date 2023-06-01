@@ -1,7 +1,7 @@
 'use client'
 import { InputHTMLAttributes } from "react";
 import { SearchIcon } from "../../icons/search-icon";
-import * as S from "./header-search-styled";
+import * as S from "./headerSearchStyled";
 import { useFilter } from "@/hooks/userFilter";
 
 
