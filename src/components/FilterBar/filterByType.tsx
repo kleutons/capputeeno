@@ -4,11 +4,8 @@ import { useFilter } from "@/hooks/userFilter"
 import { FilterItem, FilterList } from "./filterBar-Styled"
 import { FilterType } from "@/types/filterTypes";
 
-interface FilterByTypeProps{
 
-}
-
-export function FilterByType(props: FilterByTypeProps){
+export function FilterByType(){
     const { type, setType } = useFilter();
 
     const handleChangeType = ( value: FilterType ) => {

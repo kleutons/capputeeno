@@ -56,3 +56,18 @@ export function FilterSearch( dataQuery:any, dataSearch:string ){
     }
     return dataQuery;
 }
+
+export function  FilterQueryID( dataQuery:any, dataId:string ){
+    interface IProps{
+        id: string
+    }
+
+    if (dataQuery) {
+        dataQuery = dataQuery.filter(function (product:IProps) {
+          return product.id === dataId;
+        });
+        //convert objeto o primeiro elemento 
+        dataQuery = dataQuery[0];
+    }
+    return dataQuery;
+}
