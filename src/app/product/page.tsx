@@ -9,7 +9,37 @@ import { ShopBagIcon } from "@/icons/shop-bag-icon";
 export default function Product({searchParams}: {searchParams: { id: string}}){
     const { data } = useProduct(searchParams.id)
 
-    console.log(data);
+    const handleAddToCart = () => {
+        const bdLocalStorage = 'cart-items';
+        console.log(bdLocalStorage);
+
+        let cartItems = localStorage.getItem(bdLocalStorage);
+        if(cartItems){
+            let cartItemsArray = JSON.parse(cartItems);
+
+            let existingProductIdex = cartItemsArray.findIndex( (item: {id: string} ) => item.id == searchParams.id)
+
+            if(existingProductIdex != -1){
+                cartItemsArray[existingProductIdex].quantity += 1;
+            }else{
+                cartItemsArray.push({ ...data, quantity: 1})
+            }
+
+            localStorage.setItem(bdLocalStorage, JSON.stringify(cartItemsArray))
+
+        }else{
+            const newCart  = [
+                {
+                    ...data,
+                    quantity: 1
+                }
+            ];
+
+            localStorage.setItem(bdLocalStorage, JSON.stringify(newCart))
+        }
+
+    }
+
     return(
         <ContainerProduct className="container">
             <BackButton navigate="/" />
@@ -27,7 +57,10 @@ export default function Product({searchParams}: {searchParams: { id: string}}){
                             <p>{data?.description}</p>
                         </div>
                     </ProductInfor>
-                    <button> <ShopBagIcon /> Adicionar ao carrinho</button>
+                    <button onClick={handleAddToCart}> 
+                        <ShopBagIcon />
+                         Adicionar ao carrinho
+                    </button>
                 </div>
             </section>
         </ContainerProduct>

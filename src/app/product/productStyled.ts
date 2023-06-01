@@ -29,7 +29,7 @@ export const ContainerProduct = styled.div`
 
             button {
                 text-transform: uppercase;
-                background-color: #115D8C;
+                background-color: #9c4305;
                 mix-blend-mode: multiply;
                 border-radius: 4px;
                 border: none;
