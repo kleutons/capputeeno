@@ -27,32 +27,26 @@ export const TagHeader = styled.header`
     }
 `;
 
-export const LogoContainer = styled.div`
+export const Logo = styled.a`
+    color: var(--logo-color);
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 150%;
     min-width: 150px;
     display: flex;
     align-items: center;
     gap: 10px;
-
+    
     >svg{
         height: 22px;
         width: 22px;
     }
 
     @media (min-width: ${props => props.theme.tabletBreakpoint} ){
+        font-size: 40px;
         >svg{
             height: 24px;
             width: 24px;
         }
-    }
-`
-
-export const Logo = styled.a`
-    color: var(--logo-color);
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 150%;
-
-    @media (min-width: ${props => props.theme.tabletBreakpoint} ){
-        font-size: 40px;
     }
 `;

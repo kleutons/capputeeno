@@ -21,10 +21,10 @@ export function Header(props:HeaderProps){
     return(
         <S.TagHeader>
             <div className='container'>
-                <S.LogoContainer>
-                <LogoIcon />
-                <S.Logo className={sairaStencil.className}> store </S.Logo>
-                </S.LogoContainer>
+        
+                <S.Logo className={sairaStencil.className} href='/'> 
+                <LogoIcon /> store </S.Logo>
+     
                 <div className='container-input'>
                     <HeaderSearchInput
                     placeholder='Procurando por algo específico?' />
