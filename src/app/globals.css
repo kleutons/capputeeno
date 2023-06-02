@@ -1,17 +1,17 @@
 :root {
-  --border-radius: 12px; 
+  --border-radius: 12px;
   --logo-color: #5D5D6D;
   --bg-secondary: #F3F5F6;
   --bg-primary: #F0F0F5;
   --text-dark: #737380;
   --shapes-dark: #09090A;
   --text-dark-2: #41414D;
-  --text-light: #E1E1E6;
   --delete-color: #DE3838; 
   --orange-low: #FFA585;
   --shapes: #DCE2E6;
-
   --secondary-text: #617480;
+  --border-color: #A8A8B3;
+  --success-color: #51B853
 }
 
 * {
@@ -27,20 +27,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+.container{
+  padding: 0 20px; 
+  margin-bottom: 50px;
+}
 
 /* Estilos para largura de tela maior que 1200px */
 @media (min-width: 1201px) {
   .container {
-    padding: 0 20px; 
     max-width: 1166px;
     margin: 0 auto; /* Centralizar o conteúdo */
-  }
-}
-
-/* Estilos para largura de tela menor ou igual a 1200px */
-@media (max-width: 1200px) {
-  .container {
-    padding: 0 20px; /* Adicionar margens laterais */
+    margin-bottom: 50px;
   }
 }
