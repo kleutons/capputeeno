@@ -1,8 +1,7 @@
 'use client'
 
 import { BackIcon } from "@/icons/back-icon";
-import { ContainerBackButton } from "./BackButtonStyled";
-import { useRouter } from "next/navigation";
+import { ContainerBackButton } from "./buttonStyled";
 
 interface BackButtonProps{
     navigate: string;
@@ -10,14 +9,12 @@ interface BackButtonProps{
 
 export function BackButton({ navigate }: BackButtonProps) {
     
-    const router = useRouter();
-
-    const handleNavigate = () => {
-        router.push(navigate)
+    const handleClick = () => {
+        window.history.back();
     }
 
     return(
-        <ContainerBackButton onClick={handleNavigate}>
+        <ContainerBackButton onClick={handleClick}>
             <BackIcon />
             Voltar
         </ContainerBackButton>
