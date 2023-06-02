@@ -7,14 +7,12 @@ export const ContainerProduct = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-top: 28px;
 
     section{
         display: flex;
         justify-content: center;
         width: 100%;
         gap: 32px;
-        margin-top: 24px;
 
         img{
             max-width: 640px;
