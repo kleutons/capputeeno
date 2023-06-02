@@ -5,6 +5,8 @@ import styled from "styled-components";
 export const CartCount = styled.span`
     border-radius: 50%;
     padding: 0 5px;
+    min-height: 15px;
+    min-width: 15px;
     font-size: 10px;
     background-color: var(--delete-color);
     color: white;
