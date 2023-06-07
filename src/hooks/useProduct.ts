@@ -5,7 +5,7 @@ import { FilterQueryID } from "@/utils/filterQuery";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+const API_URL = 'https://kleutons.github.io/store-api/db.json' as string;
 
 const fetcher = (): AxiosPromise<ProductsFetchResponse> => {
     return axios.get(API_URL);

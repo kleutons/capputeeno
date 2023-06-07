@@ -6,7 +6,7 @@ import { useDeferredValue, useState } from "react";
 import { FilterType } from "@/types/filterTypes";   
 import { FilterQueryPriority, FilterQueryType, FilterSearch } from "@/utils/filterQuery";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+const API_URL = 'https://kleutons.github.io/store-api/db.json' as string;
 
 const fetcher = (): AxiosPromise<ProductsFetchResponse> => {
     return axios.get(API_URL);
