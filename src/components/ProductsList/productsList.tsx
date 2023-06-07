@@ -6,6 +6,7 @@ import { BtnPages, ListCardContainer, PaginationContainer } from "./productsStyl
 import { PrevIcon } from "@/icons/prev-icon";
 import { NextIcon } from "@/icons/next-icon";
 import { useState } from "react";
+import { Product } from "@/types/productsResponse";
 
 
 export function ProductsList(){
@@ -59,7 +60,7 @@ export function ProductsList(){
                 </div>
             </PaginationContainer>
             <ListCardContainer className="container">
-                {currentItems.map(product => 
+                {currentItems.map( (product:Product) => 
                 <ProductCard 
                 key={product.id}
                 title={product.name} 
