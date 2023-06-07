@@ -41,7 +41,7 @@ export const CartProvider = ({ children }: ICartProvider) => {
       localStorage.setItem(cartLocalName, JSON.stringify(cartItems));
     }, [cartItems]);
   
-    const addToCart = (item: ProductInCart) => {
+    const addToCart = (item: ProductCartAdd) => {
       setCartItems((prevItems) => {
         const existingItem = prevItems.find((cartItem) => cartItem.id === item.id);
         if (existingItem) {
