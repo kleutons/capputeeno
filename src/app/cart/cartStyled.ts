@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 export const ContainerCart = styled.div`
     display: flex;
-    justify-content: center;
     flex-direction: column;
     gap: 32px;
 
@@ -14,6 +13,7 @@ export const ContainerCart = styled.div`
 `
 
 export const ContainerCartResume = styled.div`
+    
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -24,7 +24,9 @@ export const ContainerCartResume = styled.div`
     background: #fff;
 
     @media (min-width: ${props => props.theme.tabletBreakpoint}) {
-        min-height: 650px;
+        position: sticky;
+        top: 16px;
+        height: calc(100vh - 100px);
     }
     
     >div{
