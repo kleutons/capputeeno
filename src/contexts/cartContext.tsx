@@ -1,6 +1,6 @@
 
 
-import { ProductInCart } from "@/types/productsResponse";
+import { ProductCartAdd, ProductInCart } from "@/types/productsResponse";
 import { ReactNode, createContext, useEffect, useState } from "react";
 
 const cartLocalName =  'cartItems' as string;
@@ -9,7 +9,7 @@ const cartLimit = 5 as number ;
 
 interface ICartContext{
     cartItems: ProductInCart[];
-    addToCart: (item: ProductInCart) => void;
+    addToCart: (item: ProductCartAdd) => void;
     updateQuant: (id:string, quantity: number) => void;
     removeFromCart: (item: ProductInCart) => void;
     clearCart: () => void;

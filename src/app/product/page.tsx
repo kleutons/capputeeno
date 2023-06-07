@@ -8,7 +8,7 @@ import { ShopBagIcon } from "@/icons/shop-bag-icon";
 import { useContext, useState } from "react";
 import { Modal } from "@/components/Modal/modal";
 import { CartContext } from "@/contexts/cartContext";
-import { Product } from "@/types/productsResponse";
+import { ProductCartAdd } from "@/types/productsResponse";
 
 
 export default function Product({searchParams}: {searchParams: { id: string}}){
@@ -25,7 +25,7 @@ export default function Product({searchParams}: {searchParams: { id: string}}){
     const { addToCart } = useContext(CartContext);
 
     const handleAddToCart = () => {
-        const item: Product = {
+        const item: ProductCartAdd = {
             id: data?.id || '',
             name: data?.name || '',
             image_url: data?.image_url || '',
