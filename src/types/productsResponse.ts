@@ -7,7 +7,7 @@ export interface Product{
 }
 
 export interface ProductInCart extends Product{
-    quantity: number,
+    quantity?: number,
 }
 
 export interface ProductsFetchResponse{
