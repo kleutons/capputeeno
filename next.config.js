@@ -3,6 +3,7 @@
  */
 const nextConfig = {
     /* config options here */
+    output: 'export',
     compiler: {
         styledComponents: true
     }
