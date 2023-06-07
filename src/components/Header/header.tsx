@@ -27,6 +27,7 @@ export function Header(props:HeaderProps){
      
                 <div className='container-input'>
                     <HeaderSearchInput
+                    value=''
                     placeholder='Procurando por algo específico?' />
                     <CartControl />
                 </div>
