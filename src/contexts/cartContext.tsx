@@ -28,7 +28,7 @@ export const CartContext = createContext<ICartContext>({
   });
 
 export const CartProvider = ({ children }: ICartProvider) => {
-    const [cartItems, setCartItems] = useState<CartItem[]>([]);
+    const [cartItems, setCartItems] = useState<ProductInCart[]>([]);
   
     useEffect(() => {
       const storedCartItems = localStorage.getItem(cartLocalName);
