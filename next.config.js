@@ -4,6 +4,10 @@
 const nextConfig = {
     /* config options here */
     output: 'export',
+    images: {
+        loader: 'custom',
+        loaderFile: './app/image.ts',
+    },
     compiler: {
         styledComponents: true
     }
