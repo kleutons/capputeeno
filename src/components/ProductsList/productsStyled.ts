@@ -1,6 +1,47 @@
 'use client'
 import styled from "styled-components";
 
+export const PaginationContainer = styled.div`
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    gap: 8px;
+    margin-top: 16px;
+
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        font-weight: 400;
+        font-size: 16px;
+        color: var(--text-dark);
+        text-transform: uppercase;
+        user-select: none;
+    }
+`
+
+export const BtnPages = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: #E9E9F0;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &.active{
+        background-color: var(--shapes-ligth);
+        border: 1px solid #FFA585;
+        color: #FFA585;
+        font-weight: 600;
+        cursor: default;
+    }
+`
+
+
 export const ListCardContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -36,7 +77,7 @@ export const Card = styled.div`
 
     p{
         font-weight: 600;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 150%;
         color: var(--shapes-dark);
     }

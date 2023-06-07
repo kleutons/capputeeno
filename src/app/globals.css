@@ -9,9 +9,11 @@
   --delete-color: #DE3838; 
   --orange-low: #FFA585;
   --shapes: #DCE2E6;
+  --shapes-ligth: #F5F5FA;
   --secondary-text: #617480;
   --border-color: #A8A8B3;
-  --success-color: #51B853
+  --success-color: #51B853;
+  --btn-color-1: #ff6043;
 }
 
 * {
@@ -29,7 +31,6 @@ a {
 }
 .container{
   padding: 0 20px; 
-  margin-bottom: 50px;
 }
 
 /* Estilos para largura de tela maior que 1200px */
@@ -37,6 +38,5 @@ a {
   .container {
     max-width: 1166px;
     margin: 0 auto; /* Centralizar o conteúdo */
-    margin-bottom: 50px;
   }
 }

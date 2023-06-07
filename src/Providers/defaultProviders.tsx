@@ -1,6 +1,8 @@
 'use client'
 
+import { CartProvider } from "@/contexts/cartContext";
 import { FilterCotextProvider } from "@/contexts/filterContext";
+import StyledComponentsRegistry from "@/styled-components/registry";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
@@ -20,9 +22,13 @@ export function DefaltProvaiders({ children }:DefaultProvaiderProps){
     return (
         <QueryClientProvider client={client}>
             <FilterCotextProvider>
-                <ThemeProvider theme={theme}>
-                    {children}
-                </ThemeProvider>
+                <CartProvider>
+                    <ThemeProvider theme={theme}>
+                        <StyledComponentsRegistry>
+                            {children}
+                        </StyledComponentsRegistry>
+                    </ThemeProvider>
+                </CartProvider>
             </FilterCotextProvider>
         </QueryClientProvider>
     )

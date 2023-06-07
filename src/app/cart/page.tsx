@@ -2,44 +2,36 @@
 
 import { BackButton } from "@/components/Buttons/BackButton";
 import { ContainerCartList, ContainerCart, CartList, ContainerCartResume, ResumeTotalItem, ResumeDivider } from "./cartStyled";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { ProductInCart } from "@/types/productsResponse";
 import { formatPrice } from "@/utils/formatPrice";
 import { CartItem } from "./cartItem";
-import { ShopButton } from "@/components/Buttons/ShopButton";
+import { ShopButton } from "@/components/Buttons/shopButton";
+import { useCartLocal } from "@/hooks/userCartLocal";
 
 
 
 export default function CartPage(){
 
-    const { value, updateLocalStorage } = useLocalStorage<ProductInCart[]>('cart-items', []);
+    const { cartItems, removeFromCart, updateQuant } = useCartLocal();
 
-    const calTotal = (value: ProductInCart[]) => {
-        return value.reduce( (sum, item) => sum += (item.price_in_cents * item.quantity), 0);
+    const calTotal = (valueList: ProductInCart[]) => {
+        return valueList.reduce( (sum, item) => sum += (item.price_in_cents * item.quantity), 0);
     }
 
-    const cartTotal = formatPrice(calTotal(value));
+    const cartTotal = formatPrice(calTotal(cartItems));
     const deliveryFee = 4000;
-    const cartTotalDelivery = formatPrice(calTotal(value) + deliveryFee);
+    const cartTotalDelivery = formatPrice(calTotal(cartItems) + deliveryFee);
 
-    const handleUpdateQuant = (id:string, quantity: number) => {
-        const newValue = value.map(item => {
-            if( item.id !== id ) return item
-            return  { ...item, quantity: quantity}
-        })
-        console.log(newValue);
-        updateLocalStorage(newValue)
-    } 
-
-    const handleDeleteItem = (id:string) => {
-        const confirme = confirm("Deseja Exluir esse item do seu carrinho?");
-        
-        if(confirme){
-            const newValue = value.filter(item => {
-                if( item.id !== id ) return item 
-            })
-            updateLocalStorage(newValue)
-        }
+    if (!cartItems.length) {
+        return (
+            <ContainerCart className="container">
+                <ContainerCartList>
+                    <BackButton navigate='/' />
+                        <h3>Seu carrinho está vazio</h3>
+                        <p> Volte a página de produtos e adicione novos itens! </p>
+                </ContainerCartList>
+            </ContainerCart>
+            )
     }
 
     return(
@@ -48,16 +40,21 @@ export default function CartPage(){
             <BackButton navigate='/' />
                 <h3>Seu carrinho</h3>
                 <p>
-                    Total {value.length} produtos 
+                    Total {cartItems.length} produtos 
                     <span>{cartTotal}</span>
                 </p>
                 <CartList>
-                    {value.map(item => 
-                        <CartItem 
-                        product={item} 
+                {cartItems.map((item) => (
+                    <>
+                    <CartItem 
                         key={item.id}
-                        handleDelete={handleDeleteItem}
-                        handleUpdateQuant={handleUpdateQuant}/> )}
+                        product={item}
+                        handleDelete={() => removeFromCart(item)}
+                        handleUpdateQuant={updateQuant}
+                    />
+                    </>
+                ))}
+          
                 </CartList>
             </ContainerCartList>
             <ContainerCartResume>
@@ -76,7 +73,7 @@ export default function CartPage(){
                         <p>Total</p>
                         <p>{cartTotalDelivery}</p>                    
                     </ResumeTotalItem>
-                    <ShopButton  navigate="#" />
+                    <ShopButton />
                 </div>
                 <ul>
                     <li>Ajuda</li>

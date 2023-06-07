@@ -4,7 +4,7 @@ import { ContainerShopButton } from "./buttonStyled";
 import { useRouter } from "next/navigation";
 
 interface ShopButtonProps{
-    navigate: string;
+    navigate?: string;
 }
 
 export function ShopButton({ navigate }: ShopButtonProps) {
@@ -12,11 +12,11 @@ export function ShopButton({ navigate }: ShopButtonProps) {
     const router = useRouter();
 
     const handleNavigate = () => {
-        router.push(navigate)
+        router.push(navigate || '#')
     }
 
     return(
-        <ContainerShopButton onClick={handleNavigate}>
+        <ContainerShopButton >
             Finalizar a compra
         </ContainerShopButton>
     )

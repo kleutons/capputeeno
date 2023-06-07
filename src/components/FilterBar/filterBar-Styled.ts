@@ -110,7 +110,7 @@ export const PriorityFilter = styled.ul`
     }
 
     li:hover{
-        border-bottom: 1px solid var(--text-light);
+        border-bottom: 1px solid var(--shapes-ligth);
     }
 
 `
