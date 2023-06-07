@@ -4,11 +4,9 @@
 const nextConfig = {
     /* config options here */
     compiler: {
-        styledComponents: true
+      styledComponents: true
     },
-    output: {
-        exportTrailingSlash: true
-    }
-};
-
-module.exports = nextConfig;
+    output: "export"
+  };
+  
+  module.exports = nextConfig;
