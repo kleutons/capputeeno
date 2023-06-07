@@ -5,7 +5,10 @@ const nextConfig = {
     /* config options here */
     compiler: {
         styledComponents: true
+    },
+    output: {
+        exportTrailingSlash: true
     }
-  }
-  
-  module.exports = nextConfig
+};
+
+module.exports = nextConfig;
