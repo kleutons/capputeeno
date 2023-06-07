@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactChild, ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { useServerInsertedHTML } from 'next/navigation';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 
@@ -15,6 +15,7 @@ export default function StyledComponentsRegistry({
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
+    // @ts-ignore
     styledComponentsStyleSheet.instance.clearTag();
     return <>{styles}</>;
   });
@@ -23,7 +24,7 @@ export default function StyledComponentsRegistry({
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      {children as ReactChild}
+      {children}
     </StyleSheetManager>
   );
 }
