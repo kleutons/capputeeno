@@ -1,5 +1,5 @@
 'use client'
-export const dynamic = 'auto'
+export const dynamic = 'force-static'
 import { BackButton } from "@/components/Buttons/BackButton";
 import { ContainerProduct, ProductInfor } from "./productStyled";
 import { useProduct } from "@/hooks/useProduct";
