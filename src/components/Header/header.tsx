@@ -17,17 +17,17 @@ interface HeaderProps{
 
 
 export function Header(props:HeaderProps){
-   
     return(
         <S.TagHeader>
+            
             <div className='container'>
         
                 <S.Logo className={sairaStencil.className} href='/'> 
                 <LogoIcon /> store </S.Logo>
      
                 <div className='container-input'>
+                    
                     <HeaderSearchInput
-                    value=''
                     placeholder='Procurando por algo específico?' />
                     <CartControl />
                 </div>

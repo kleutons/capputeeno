@@ -6,15 +6,20 @@ import { useFilter } from "@/hooks/userFilter";
 
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-    value: string;
+    value?: string;
 }
 
 export function HeaderSearchInput(props: InputProps){
     const { setSearch } = useFilter();
+    
+    const handleValue = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setSearch(value);
+    }
 
     return(
         <S.SearchContainer>
-            <S.SearchInput onChange={(e) => setSearch(e.target.value)}  {...props}/>
+            <S.SearchInput onChange={handleValue}  {...props}/>
             <SearchIcon/>
         </S.SearchContainer>
     )
