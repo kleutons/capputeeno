@@ -12,9 +12,7 @@ import { ProductCartAdd } from "@/types/productsResponse";
 
 
 export default function Product({searchParams}: {searchParams: { id: string}}){
-    const { data } = useProduct(searchParams.id);
-
-
+    const { data } = useProduct(searchParams.id || 'null');
 
     const [ open, setOpen ] = useState(false);
 
@@ -34,6 +32,14 @@ export default function Product({searchParams}: {searchParams: { id: string}}){
           };
         addToCart(item);
     };
+
+    if(!data) 
+    return(
+        <ContainerProduct className="container">
+            <BackButton navigate="/" />
+            Produto nao Encontrado!
+        </ContainerProduct>
+     ) 
 
     return(
         <ContainerProduct className="container">
