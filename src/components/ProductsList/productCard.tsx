@@ -3,6 +3,7 @@
 import { formatPrice } from "@/utils/formatPrice";
 import { Card } from "./productsStyled";
 import { useRouter } from "next/navigation";
+import Image from 'next/image';
 
 interface ProductCardProps{
     image: string,
@@ -25,7 +26,7 @@ export function ProductCard(props: ProductCardProps){
 
     return(
         <Card onClick={handleNavigate}>
-            <img src={props.image} />
+            <Image alt={props.title} src={props.image} width={256} height={300} />
             <div>
                 <h3>{props.title}</h3>
                 <div></div>

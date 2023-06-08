@@ -5,6 +5,7 @@ import { formatPrice } from "@/utils/formatPrice"
 import { ChangeEvent } from "react"
 import { DeleteIcon } from "@/icons/delete-icon"
 import { useRouter } from "next/navigation"
+import Image from 'next/image';
 
 interface CartItemProps{
     product: ProductInCart,
@@ -24,7 +25,7 @@ export function CartItem({product, handleUpdateQuant, handleDelete}:CartItemProp
 
     return(
         <ContaineCartItem>
-            <img src={product.image_url}  onClick={viewProduct} />
+            <Image alt={product.name} src={product.image_url}  onClick={viewProduct} width={256} height={256} />
             <div>
                 <div>
                     <h4 onClick={viewProduct}>{product.name}</h4>
