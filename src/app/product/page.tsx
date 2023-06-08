@@ -1,5 +1,5 @@
 'use client'
-
+export const dynamic = 'force-dynamic'
 import { BackButton } from "@/components/Buttons/BackButton";
 import { ContainerProduct, ProductInfor } from "./productStyled";
 import { useProduct } from "@/hooks/useProduct";
@@ -12,6 +12,7 @@ import { ProductCartAdd } from "@/types/productsResponse";
 import Image from 'next/image';
 
 export default function Product({searchParams}: {searchParams: { id: string}}){
+
     const { data } = useProduct(searchParams.id || 'null');
 
     const [ open, setOpen ] = useState(false);
