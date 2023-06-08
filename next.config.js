@@ -6,6 +6,7 @@ const nextConfig = {
     compiler: {
       styledComponents: true
     },
+    output: 'export',
     images: {
       remotePatterns: [
         {
