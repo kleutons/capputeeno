@@ -9,16 +9,10 @@ import { useContext, useState } from "react";
 import { Modal } from "@/components/Modal/modal";
 import { CartContext } from "@/contexts/cartContext";
 import { ProductCartAdd } from "@/types/productsResponse";
-import { useRouter } from "next/navigation";
 import Image from 'next/image';
 
 export default function Product({searchParams}: {searchParams: { id: string}}){
     const { data } = useProduct(searchParams.id || 'null');
-    
-    const router = useRouter()
-
-    console.log('aqui >>');
-    console.log(router.query);
 
     const [ open, setOpen ] = useState(false);
 
