@@ -30,7 +30,7 @@ export const ContainerShopButton = styled.button`
     border-radius: 4px;
     color: #fff;
     border: none;
-    background: var(--btn-color-1);
+    background: #51B853;
     cursor: pointer;
     width: 100%;
     margin-top: 40px;
