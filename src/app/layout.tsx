@@ -7,11 +7,12 @@ import { Footer } from '@/components/Footer/footer'
 
 const saira = Saira({ 
   weight: ['300', '400', '500', '600'],
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap'
  })
 
 export const metadata = {
-  title: 'Store',
+  title: 'Capputeeno',
 }
 
 export default function RootLayout({
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
 
       <body className={saira.className}>
 
