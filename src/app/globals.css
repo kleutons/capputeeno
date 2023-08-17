@@ -30,7 +30,14 @@ a {
   text-decoration: none;
 }
 .container{
-  padding: 0 20px; 
+  padding: 0 10px; 
+}
+
+/* Estilos para largura de tela maior que 1200px */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 20px; 
+  }
 }
 
 /* Estilos para largura de tela maior que 1200px */

@@ -7,7 +7,8 @@ import { Saira_Stencil_One } from 'next/font/google'
 
 const sairaStencil = Saira_Stencil_One({ 
   weight: ['400'],
-  subsets: ['latin']
+  subsets: ['latin'],
+  display: 'swap'
  })
 
 
@@ -17,17 +18,17 @@ interface HeaderProps{
 
 
 export function Header(props:HeaderProps){
-   
-    return(
+    return( 
         <S.TagHeader>
+            
             <div className='container'>
         
                 <S.Logo className={sairaStencil.className} href='/'> 
-                <LogoIcon /> store </S.Logo>
+                capputeeno
+                </S.Logo>
      
                 <div className='container-input'>
                     <HeaderSearchInput
-                    value=''
                     placeholder='Procurando por algo específico?' />
                     <CartControl />
                 </div>

@@ -12,4 +12,13 @@ export const TagFooter = styled.footer`
     font-size: 15px;
     color: var(--text-dark);
     padding: 15px 0;
+
+    a{
+        color: #1801ad;
+        font-weight: bold;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: #0647c8;
+    }
 `
