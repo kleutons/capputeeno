@@ -14,5 +14,13 @@ export interface ProductInCart extends Product{
 }
 
 export interface ProductsFetchResponse{
-    allProducts: Product[]
+    data: {
+        allProducts: Product[]
+    }
+}
+
+export interface ProductFetchResponse{
+    data: {
+        Product: Product
+    }
 }

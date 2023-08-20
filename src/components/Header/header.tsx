@@ -7,8 +7,7 @@ import { Saira_Stencil_One } from 'next/font/google'
 
 const sairaStencil = Saira_Stencil_One({ 
   weight: ['400'],
-  subsets: ['latin'],
-  display: 'swap'
+  subsets: ['latin']
  })
 
 

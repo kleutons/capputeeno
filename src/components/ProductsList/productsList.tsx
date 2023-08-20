@@ -14,25 +14,15 @@ export function ProductsList(){
     const [currentPage, setCurrentPage] = useState(1);
     
 
-     
-
-
-    if (!data || data.length === 0) {
-        return(
-            <ListCardContainer>
-                <p>Produto(s) não encontrado(s).</p>
-            </ListCardContainer>
-        )
-    }else{
 
         const itemsPerPage = 12; // número de itens exibidos por página
-        const totalItens = data.length;
+        const totalItens = data?.length;
         const totalPages = Math.ceil(totalItens / itemsPerPage);
 
         // Lógica para cálculo do índice inicial e final dos itens exibidos na página atual
         const indexOfLastItem = currentPage * itemsPerPage;
         const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-        const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+        const currentItems = data?.slice(indexOfFirstItem, indexOfLastItem);
 
         // Função para atualizar a página atual
         const paginate = (pageNumber:number) => {
@@ -60,7 +50,7 @@ export function ProductsList(){
                 </div>
             </PaginationContainer>
             <ListCardContainer className="container">
-                {currentItems.map( (product:Product) => 
+                {currentItems?.map( (product:Product) => 
                 <ProductCard 
                 key={product.id}
                 title={product.name} 
@@ -74,7 +64,7 @@ export function ProductsList(){
         )
 
         
-    }
+    
 
     
 

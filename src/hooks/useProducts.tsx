@@ -2,14 +2,28 @@ import { ProductsFetchResponse } from "@/types/productsResponse";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios";
 import { useFilter } from "./userFilter";
-import { useDeferredValue, useState } from "react";
-import { FilterType } from "@/types/filterTypes";   
+import { useDeferredValue } from "react";
 import { FilterQueryPriority, FilterQueryType, FilterSearch } from "@/utils/filterQuery";
 
-const API_URL = 'https://kleutons.github.io/store-api/db.json' as string;
+const API_URL = 'https://capputeeno-api-vercel.vercel.app/api/graphql' as string;
 
 const fetcher = (): AxiosPromise<ProductsFetchResponse> => {
-    return axios.get(API_URL);
+    return axios.post(
+        API_URL,
+        {
+            "query": `query{
+                 allProducts 
+                        {
+                            id  
+                            name 
+                            image_url
+                            price_in_cents 
+                            category
+                            sales
+                            created_at
+                        } 
+                    }`
+        });
 }
 
 
@@ -23,8 +37,11 @@ export function useProducts(){
         queryKey: ['products', type],
         staleTime: 1000 * 60 * 1
     });
+
+
+
     
-    const dataReturn = data?.data?.allProducts;
+    const dataReturn = data?.data.data.allProducts;
     
     const filter = FilterQueryType(dataReturn, type);
 

@@ -4,9 +4,8 @@ import { Saira } from 'next/font/google'
 import { DefaltProvaiders } from '@/Providers/defaultProviders'
 import { Footer } from '@/components/Footer/footer'
 
-
 const saira = Saira({ 
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600'],
   subsets: ['latin'],
   display: 'swap'
  })

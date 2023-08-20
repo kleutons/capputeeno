@@ -10,6 +10,7 @@ export const FilterContainer = styled.div`
     align-items: start;
     justify-content: space-between;
     padding-top: 34px;
+    font-family: inherit;
 
     @media (min-width: ${props => props.theme.tabletBreakpoint} ){
         flex-direction: row;

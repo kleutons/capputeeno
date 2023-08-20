@@ -11,9 +11,9 @@ const nextConfig = {
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'kleutons.github.io',
+          hostname: 'storage.googleapis.com',
           port: '',
-          pathname: '/store-api/img/**',
+          pathname: '**',
         },
       ],
     },
