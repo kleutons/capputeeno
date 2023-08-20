@@ -3,6 +3,8 @@
 
 Seja bem-vindo(a)! Neste repositório, apresento minha solução para o Desafio Frontend proposto pela [Rocketseat](https://github.com/Rocketseat/frontend-challenge), em colaboração com a talentosa [@Fernanda Kipper](https://github.com/Fernanda-Kipper/). Gostaria de expressar meu profundo agradecimento à Fernanda Kipper pelo inestimável apoio durante todo o desenvolvimento deste projeto.
 
+### [Projeto Online](https://capputeeno-kleuton.vercel.app/)
+
 ### Screenshots
 
 ![App Screenshot](https://raw.githubusercontent.com/kleutons/capputeeno/master/.github/prototype.png)
