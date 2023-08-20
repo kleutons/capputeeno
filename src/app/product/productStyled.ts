@@ -15,12 +15,10 @@ export const ContainerProduct = styled.div`
         width: 100%;
         gap: 32px;
 
-        @media (min-width: ${props => props.theme.desktopBreakpoint}) {
-            flex-direction: row;
-        }
+        
         img{
             max-width: 640px;
-            width: 50%;
+            width: 100%;
         }
 
         > div {
@@ -46,6 +44,14 @@ export const ContainerProduct = styled.div`
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
+            }
+        }
+
+        @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+            flex-direction: row;
+            
+            img{
+            width: 50%;
             }
         }
     }
