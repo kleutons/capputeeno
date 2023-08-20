@@ -3,6 +3,7 @@ export interface Product{
     price_in_cents: number,
     id: string,
     image_url: string,
+    category?: string,
     description?: string
 }
 export interface ProductCartAdd extends Product{

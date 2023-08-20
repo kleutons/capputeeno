@@ -1,11 +1,10 @@
 'use client'
 
 import { ProductFetchResponse } from "@/types/productsResponse";
-import { FilterQueryID } from "@/utils/filterQuery";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios";
 
-const API_URL = 'https://capputeeno-api-vercel.vercel.app/api/graphql' as string;
+const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
 const fetcher = (productId: string): AxiosPromise<ProductFetchResponse> => {
     return axios.post(API_URL,{query:`

@@ -5,7 +5,7 @@ import { useFilter } from "./userFilter";
 import { useDeferredValue } from "react";
 import { FilterQueryPriority, FilterQueryType, FilterSearch } from "@/utils/filterQuery";
 
-const API_URL = 'https://capputeeno-api-vercel.vercel.app/api/graphql' as string;
+const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
 const fetcher = (): AxiosPromise<ProductsFetchResponse> => {
     return axios.post(
