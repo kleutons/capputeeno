@@ -10,10 +10,14 @@ export const ContainerProduct = styled.div`
 
     section{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         width: 100%;
         gap: 32px;
 
+        @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+            flex-direction: row;
+        }
         img{
             max-width: 640px;
             width: 50%;
