@@ -12,7 +12,9 @@ const saira = Saira({
 
 export const metadata = {
   title: 'Capputeeno',
+  description: 'Kleuton Novais - Desenvolvedor Web',
 }
+
 
 export default function RootLayout({
   children,
