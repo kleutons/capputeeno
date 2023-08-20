@@ -1,34 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Desafio FrontEnd - eCommerce Capputeeno
 
-First, run the development server:
+Seja bem-vindo(a)! Neste repositório, apresento minha solução para o Desafio Frontend proposto pela [Rocketseat](https://github.com/Rocketseat/frontend-challenge), em colaboração com a talentosa [@Fernanda Kipper](https://github.com/Fernanda-Kipper/). Gostaria de expressar meu profundo agradecimento à Fernanda Kipper pelo inestimável apoio durante todo o desenvolvimento deste projeto.
 
+### Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/kleutons/capputeeno/master/.github/prototype.png)
+
+
+Minha abordagem trouxe várias melhorias significativas, incluindo:
+
+- <b>[Servidor Backend Graphql:](https://capputeeno-api-vercel.vercel.app/api/graphql)</b> Implementei um servidor backend GraphQL, isso permite que o site seja alimentado com dados de maneira eficiente e dinâmica.
+
+- <b>Sistema de Paginação:</b> Integrei um sistema de paginação para melhorar a experiência do usuário ao navegar pelos produtos. Agora, a navegação entre diferentes páginas de produtos é mais fluída e organizada.
+
+- <b>Sistema de Loading:</b> Implementei uma técnica de pré-carregamento de páginas, garantindo que os usuários tenham uma experiência mais suave ao carregar novos conteúdos. Isso reduz a sensação de espera e mantém o engajamento do usuário.
+
+- <b>Melhoria de Interação:</b> Introduzi um efeito de hover, destacando a interatividade do usuário com os produtos, proporcionando uma experiência mais envolvente.
+
+## 🧠 Sobre
+
+O Desafio com este projeto é implementar um e-commerce com design responsivo usando o [Protótipo no Figma](https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449), para venda de canecas e camisetas que deverá ter as seguintes funcionalidades:
+
+- ✅Catálogo de produtos com paginação
+- ✅Filtrar produtos por categoria
+- ✅Pesquise pelo nome do produto
+- ✅Adicionar e remover produtos do carrinho
+- ✅página de checkout
+## 💻 Tecnologias Utilizadas
+- Design seguindo esse [Protótipo Figma](https://www.figma.com/file/rET9F2CeUEJdiVN7JRu993/E-commerce---capputeeno?node-id=680%3A6449)
+- Next.js e Typescript
+- Estilização com styled-components
+- Local storage para gerenciar o carrinho, sem perda de dados
+- README as instruções de instalação do projeto
+- Consumir BackEnd com API GraphQL 
+
+>Além das tecnologias principais, foram utilizadas as seguintes bibliotecas e ferramentas:
+- Axios
+- ESLint
+- Tanstack/React-query (sistema de cache api)
+
+## 📋 Instalação - Requisitos
+
+### Frontend
+
+1. Clonar este repositório
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/kleutons/capputeeno.git
+```
+2. Criar um arquivo .env com o link do seu servidor BackEnd:
+```
+NEXT_PUBLIC_API_URL=https://localhost/4444
+```
+Você pode usar o servidor backEnd descrito abaixo.
+
+3. Install dependencies
+```bash
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Executar Front-end
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Servidor BackEnd
+Siga os passos nesse repositorio, para gerar o servidor GraphQL: 
+- https://github.com/kleutons/capputeeno-api
+## 👨‍💻 Sobre Mim
+### Made with 💙 by [@Kleuton Novais](https://github.com/kleutons)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Contato
+- [LinkedIn](https://www.linkedin.com/in/kleuton-novais/)
+- [Portfólio](https://kleuton.dev)
 
-## Learn More
+###
+Estou ansioso para receber feedback e sugestões sobre esta solução.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Mais uma vez, agradeço à Rocketseat e à Fernanda Kipper por esta oportunidade de aprendizado e colaboração
